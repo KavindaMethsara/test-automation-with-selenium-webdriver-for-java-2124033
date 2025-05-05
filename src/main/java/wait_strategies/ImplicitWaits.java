@@ -8,7 +8,7 @@ public class ImplicitWaits extends Main {
 
   public static void main(String[] args) {
     
-    
+    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));//Manage the implicit wait for interacting a element
     driver.get("https://www.selenium.dev/selenium/web/dynamic.html");
     driver.findElement(By.id("reveal")).click();
     driver.findElement(By.id("revealed")).sendKeys("I see you");
