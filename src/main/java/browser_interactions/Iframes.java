@@ -9,7 +9,9 @@ public class Iframes extends Main {
   public static void main(String[] args) {
     driver.get("https://www.selenium.dev/selenium/web/click_tests/click_in_iframe.html");
     
-
+    driver.switchTo().frame("ifr");//Switching to the iframe
+    driver.findElement(By.id("link")).click();
+    driver.switchTo().defaultContent();//Switching back outside of the iframe
 
     driver.quit();
   }
