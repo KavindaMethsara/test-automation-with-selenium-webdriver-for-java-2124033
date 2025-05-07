@@ -13,7 +13,11 @@ public class Navigation extends Main {
     driver.findElement(By.id("twoClientRects")).click();
     System.out.println("clicked link. now on page: " + driver.getTitle());
 
-    
+    driver.navigate().back();
+    System.out.println("went back. on page:" + driver.getTitle());
+
+    driver.navigate().forward();
+    System.out.println("went forward. on page:" + driver.getTitle());
 
     driver.quit();
   }
