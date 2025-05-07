@@ -17,7 +17,13 @@ public class FluentWaits extends Main
     driver.get("https://www.selenium.dev/selenium/web/dynamic.html");
     driver.findElement(By.id("adder")).click();
 
+    var wait = new FluentWait<>(driver)//Creating the FluentWait instance
+    /*Adding builder patterns to chain additional methods to configure this fluent wait*/
+      .withTimeout(Duration.ofSeconds(5))//To specify the maximum time of the wait, default is 500 milliseconds
+      .pollingEvery(Duration.ofMillis(200))//How oftern to check the condition-pollingEvery method, default is 250 milliseconds
+      .ignoring(NoSuchElementException.class);//Ignore the exception during to wait
 
+    WebElement box = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("box0")));
 
     driver.quit();
   }
