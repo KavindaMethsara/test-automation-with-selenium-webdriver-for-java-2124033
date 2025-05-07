@@ -15,7 +15,8 @@ public class Main {
 
     var options = new ChromeOptions();
     options.addArguments("--no-sandbox");
-    options.enableBiDi();
+    options.enableBiDi();/*Enabeling WebDriver to create a bidirectional connection 
+                          between test script & the browser*/
     driver = new ChromeDriver(options);
   }
 
